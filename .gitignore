@@ -13,6 +13,9 @@ desktop.ini
 node_modules/
 .cache/
 *.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
 
 # Claude Code — personal, not shared
 .claude/settings.local.json

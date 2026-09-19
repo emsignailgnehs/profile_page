@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll) build configuration.
+#
+# The knowledge base and agent configuration live in this repository but are not
+# part of the published site.
+exclude:
+  - raw
+  - wiki
+  - .claude
+  - CLAUDE.md
+  - README.md
+  - LICENSE
