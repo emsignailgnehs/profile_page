@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Tooling
+node_modules/
+.cache/
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Claude Code — personal, not shared
+.claude/settings.local.json

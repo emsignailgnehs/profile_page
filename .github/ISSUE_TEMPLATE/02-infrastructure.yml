@@ -1,0 +1,40 @@
+name: Infrastructure / concept
+description: A piece of tooling to build — a hook, a workflow, a skill, an agent.
+labels: ["infrastructure"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What to build
+    validations:
+      required: true
+  - type: textarea
+    id: teaches
+    attributes:
+      label: What this is meant to teach
+      description: >
+        The reason this repository carries more tooling than a page this size needs.
+        If a piece of infrastructure teaches nothing, it does not belong here.
+    validations:
+      required: true
+  - type: dropdown
+    id: mechanism
+    attributes:
+      label: Hook or skill?
+      description: >
+        Hooks are unconditional and need no judgement. Anything requiring judgement
+        about content belongs in a skill or a CLAUDE.md rule.
+      options:
+        - Hook — should fire whether or not the agent agrees
+        - Skill — needs judgement about content
+        - Workflow — runs in CI
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: How to tell it is done
+      description: Prefer a check that can fail. An untested gate is not a gate.
+    validations:
+      required: true
