@@ -1,0 +1,48 @@
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  hooks:
+    name: Agent guardrails
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Guard tests
+        run: python3 .claude/hooks/tests/test_guard_raw.py
+
+      - name: Hook scripts are syntactically valid
+        run: python3 -m compileall -q .claude/hooks
+
+      - name: settings.json is valid JSON
+        run: python3 -c "import json; json.load(open('.claude/settings.json'))"
+
+  wiki:
+    name: Knowledge base
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Vendored skill tests
+        run: |
+          python3 -m pip install --quiet pytest
+          python3 -m pytest .claude/skills/karpathy-llm-wiki/tests/ -q
+
+      # The grounding invariant: every load-bearing fact in wiki/ must appear
+      # verbatim in a raw/ file it links. Suspects are candidates rather than
+      # verdicts, so this fails the build only on evidence errors.
+      - name: Evidence check
+        run: python3 .github/scripts/evidence_gate.py

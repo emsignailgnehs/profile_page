@@ -25,11 +25,11 @@ justified, not by its ratio to the product.
 |---|---|---|
 | Project context for AI sessions | `CLAUDE.md` | done |
 | Editor and formatting conventions | `.editorconfig` | done |
-| Knowledge base (external sources → cited articles) | `.claude/skills/karpathy-llm-wiki/`, `wiki/`, `raw/` | planned |
-| Deterministic agent guardrails (hooks) | `.claude/settings.json` | planned |
-| Issue and PR workflow | `.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md` | planned |
-| Continuous deployment | `.github/workflows/deploy.yml` | planned |
-| Quality gates (lint, a11y, links, evidence) | `.github/workflows/` | planned |
+| Knowledge base (external sources → cited articles) | `.claude/skills/karpathy-llm-wiki/`, `wiki/`, `raw/` | done |
+| Deterministic agent guardrails (hooks) | `.claude/settings.json`, `.claude/hooks/` | done |
+| Issue and PR workflow | `.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md` | done |
+| Continuous deployment | `.github/workflows/deploy.yml` | done |
+| Quality gates (evidence, guard tests) | `.github/workflows/checks.yml` | partial — page gates await page content |
 | Content as data | `data/projects.json` | planned |
 
 ## Running it locally

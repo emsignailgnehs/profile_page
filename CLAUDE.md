@@ -31,7 +31,9 @@ Live at https://emsignailgnehs.github.io/profile_page
 
 - Work on a branch; never commit directly to `master`.
 - One logical change per commit, with a message that says why, not what.
-- Changes reach `master` through a pull request once that workflow exists.
+- Changes reach `master` through a pull request. `.github/pull_request_template.md`
+  lists the checks; run them locally before opening it rather than letting CI find out.
+- Before trusting a new CI gate, watch it fail on purpose. An untested gate is not a gate.
 
 ## The wiki
 

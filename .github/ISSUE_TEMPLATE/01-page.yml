@@ -1,0 +1,26 @@
+name: Page change
+description: Something about the site itself — content, styling, accessibility, performance.
+labels: ["page"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What should change
+      description: Describe the change from a visitor's point of view, not an implementation.
+      placeholder: The contact button gives screen readers no signal that it expands a panel.
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: File and line if you know it.
+      placeholder: index.html:18
+  - type: textarea
+    id: done
+    attributes:
+      label: How to tell it is done
+      description: What you would check to confirm this is finished.
+      placeholder: Button reports aria-expanded, and its state changes when toggled.
+    validations:
+      required: true

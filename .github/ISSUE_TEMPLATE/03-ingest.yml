@@ -1,0 +1,24 @@
+name: Source to ingest
+description: Something to read and compile into the knowledge base.
+labels: ["ingest"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: URL, or a description of where to find it.
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: Existing topic directory if one fits; a new one only if genuinely distinct.
+      placeholder: claude-code
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it is worth keeping
+      description: >
+        A thin source does not need an article. If this only confirms what the wiki
+        already holds, it can be logged as "no material" and left at that.
